@@ -1,0 +1,105 @@
+return {
+    name = "kpfonts-math",
+    version = "1.00",
+    comment = "KP Fonts.",
+    author = "Hans Hagen & Mikael Sundqvist",
+    copyright = "ConTeXt development team",
+    mathematics = {
+        parameters = {
+            NoLimitSupFactor                =    0,
+            NoLimitSubFactor                =  900,
+         -- AccentBaseHeight                =    0,
+            AccentBaseDepth                 =   30,
+            RadicalDegreeBottomRaisePercent =   70,
+         -- RadicalRuleThickness            =   50, -- 50 in font
+            DelimiterPercent                =   90,
+            DelimiterShortfall              =  400,
+         -- DisplayOperatorMinHeight        = 1800, -- 1500 in font (only one)
+            PrimeRaisePercent               =  25, -- 50 default
+         -- PrimeRaiseComposedPercent       =  25, -- 25 default
+        },
+        tweaks = {
+            aftercopying = {
+                {
+                    tweak    = "version",
+                    expected = "Version 0.40",
+                },
+                {
+                    tweak = "dimensions",
+                    list  = {
+                        -- whatever
+                    },
+                },
+                {
+                    tweak = "kerns",
+                    list  = {
+                        [0x2F] = {
+                            topleft     = -0.2,
+                         -- bottomleft  =  0,
+                         -- topright    =  0,
+                            bottomright =  -0.2,
+                       },
+
+                        ["0x7D.parts.top"] = {
+                            topright    = -0.25,
+                        }, -- right brace top
+                        ["0x7D.parts.bottom"] = {
+                            bottomright = -0.25,
+                        }, -- right brace bottom
+                        ["0x7D.variants.*"] = {
+                            topright = -0.1,
+                            bottomright = -0.1,
+                        }, -- right brace variants
+                        ["0x29.parts.top"] = {
+                            topright    = -0.05,
+                        }, -- right parenthesis top
+                        ["0x29.parts.bottom"] = {
+                            bottomright = -0.05,
+                        }, -- right parenthesis bottom
+                        ["0x29.variants.*"] = {
+                            topright = -0.05,
+                            bottomright = -0.05,
+                        }, -- right parenthesis variants
+                        ["0x221A.parts.top"] = {
+                            topright = 0.2,
+                        }, -- right radical top
+                        ["0x221A.parts.bottom"] = {
+                            bottomright = 0.2,
+                        }, -- right radical bottom
+                        ["0x221A.variants.*"] = {
+                            topright = 0.2,
+                            bottomright = 0.2,
+                        }, -- right radical variants
+
+                    },
+                },
+             -- {
+             --     tweak   = "fixprimes",
+             --     factor  = 0.85, -- accent base height
+             --     smaller = true, -- replace multiples
+             --     scale   = 0.75, -- glyph scale
+             --     fake    = 0.75, -- replace multiples with this width proportion
+             --  -- keep    = true, -- keep the text size prime (aka minute)
+             -- },
+                {
+                    tweak = "checkspacing",
+                },
+                {
+                    tweak = "addscripts",
+                },
+                {
+                    tweak = "accentdimensions",
+                },
+                {
+                    tweak = "addrules",
+                },
+            },
+        },
+        alternates = {
+         -- italic = { feature = 'ss01', value = 1, comment = "Mathematical Alternative Lowercase Italic" },
+        },
+        bigslots = {
+            1, 2, 3, 4
+        },
+    },
+}
