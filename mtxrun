@@ -7,6 +7,7 @@ self_dir=$(dirname $(readlink -f "$BASH_SOURCE"))
 # ~/.config/context/texmfcnf.lua (or the XDG equivalent)
 export TEXMFCNF TEXMFCACHE TEXMFDOTDIR TEXMF TEXMFCONTEXT OSFONTDIR
 : "${TEXMFCNF:="${XDG_CONFIG_HOME:-$HOME/.config}/context;/etc/context"}"
+: "${TEXMFCACHE:=${XDG_CACHE_HOME:-$HOME/.cache}}"
 : "${TEXMFDOTDIR:="."}"
 : "${TEXMF:="\$TEXMFCONTEXT"}"
 : "${TEXMFCONTEXT:="selfautodir:share/context/texmf"}"
