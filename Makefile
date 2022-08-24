@@ -9,3 +9,5 @@ install:
 	ln -sf ../share/context/texmf/scripts/context/lua/mtxrun.lua $(DESTDIR)$(PREFIX)/bin/
 	mkdir -p $(DESTDIR)$(PREFIX)/share/context
 	cp -rf texmf $(DESTDIR)$(PREFIX)/share/context/
+	# set files 644 and directories 755
+	chmod -R a=r,u+w,a+X $(DESTDIR)$(PREFIX)/share/context/
