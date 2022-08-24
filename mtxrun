@@ -1,6 +1,6 @@
 #!/bin/bash
 
-self_dir=$(dirname $(readlink -f "$BASH_SOURCE"))
+self_dir=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")
 
 # directories with texmfcnf.lua, in order of priority:
 # /etc/context/texmfcnf.lua
@@ -14,4 +14,4 @@ export TEXMFCNF TEXMFCACHE TEXMFDOTDIR TEXMF TEXMFCONTEXT OSFONTDIR
 : "${OSFONTDIR:="/usr/share/fonts//;${XDG_DATA_HOME:-$HOME/.local/share}/fonts//"}"
 
 # run with argv[0] = mtxrun, which makes luametatex run the mtxrun.lua file in its directory
-exec -a "$BASH_SOURCE" "$self_dir/luametatex" "$@"
+exec -a "${BASH_SOURCE[0]}" "$self_dir/luametatex" "$@"
