@@ -10,4 +10,4 @@ install:
 	cp -f luametatex mtxrun $(DESTDIR)$(PREFIX)/bin/
 	chmod +x $(DESTDIR)$(PREFIX)/bin/luametatex $(DESTDIR)$(PREFIX)/bin/mtxrun
 	ln -sf ../share/context/texmf/scripts/context/lua/mtxrun.lua $(DESTDIR)$(PREFIX)/bin/
-	cp -rf texmf texmfcnf.lua $(DESTDIR)$(PREFIX)/share/context/
+	cp -rf texmf $(DESTDIR)$(PREFIX)/share/context/
